@@ -3,6 +3,7 @@ import json
 
 
 def executed_operations(filename):
+    '''Функция читает файл с операциями и возвращает список операций со статусом Executed'''
     with open(filename, 'r') as file:
         operations = json.load(file)
     operation = []
@@ -20,6 +21,3 @@ def executed_operations(filename):
                           })
 
     return operation
-
-#x = executed_operations('operations.json')
-#print(x)

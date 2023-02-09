@@ -1,9 +1,11 @@
 from datetime import datetime
 
 def sort_by_data(operation):
+    '''Функция принимает список операций и сортирует его по датам от самой последей'''
     list_of_operations = sorted(operation, key=lambda x: datetime.strptime(x['date'], '%d.%m.%Y %H:%M:%S'), reverse=True)
     return list_of_operations
 def last_five_ops(list_of_operations):
+    '''Функция выводит 5 операций из отсортированного по датам списка'''
     for ops in list_of_operations[0:5]:
         date = ops['date']
         desc = ops['description']
