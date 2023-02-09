@@ -20,3 +20,6 @@ def executed_operations(filename):
                           })
 
     return operation
+
+#x = executed_operations('operations.json')
+#print(x)
