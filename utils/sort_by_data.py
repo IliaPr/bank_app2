@@ -12,7 +12,7 @@ def last_five_ops(list_of_operations):
         card_bill_from = ops['from']
         if 'Счет' in card_bill_from:
             bill_name = 'Счет '
-            sender = bill_name + '*' * len(card_bill_from[:-4]) + card_bill_from[-4:]
+            sender = bill_name + '*' * len(card_bill_from[-3:-1]) + card_bill_from[-4:]
         else:
             card_number = card_bill_from.split()[-1]
             private_number = card_number[:6] + (len(card_number[6:-4]) * '*') + card_number[-4:]
@@ -23,7 +23,7 @@ def last_five_ops(list_of_operations):
             full_card_name = ' '.join(card_name2)
             sender = full_card_name + ' ' + spaces
         bill_to = ops['to']
-        stars ='Счет ' + '*' * len(bill_to[:-4]) + bill_to[-4:]
+        stars ='Счет ' + '*' * len(bill_to[-3:-1]) + bill_to[-4:]
         summ = ops['operationAmount']['amount']
         curr = ops['operationAmount']['currency']['name']
         print(f'{date} {desc}\n{sender} -> {stars}\n{summ} {curr}\n')
